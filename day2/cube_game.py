@@ -12,13 +12,13 @@ blue_cubes = 14
 input = open(sys.argv[1], 'r')
 
 for i,line in enumerate(input):
-    red = regex.findall(r'(\d+ red)', line)
-    green = regex.findall(r'(\d+ green)', line)
-    blue = regex.findall(r'(\d+ blue)', line)
+    red = regex.findall(r'(\d+) red', line)
+    green = regex.findall(r'(\d+) green', line)
+    blue = regex.findall(r'(\d+) blue', line)
     # max red cubes
-    max_red = max([int(r.strip(" red")) for r in red])
-    max_blue = max([int(b.strip(" blue")) for b in blue])
-    max_green = max([int(g.strip(" green")) for g in green])
+    max_red = max([int(r) for r in red])
+    max_blue = max([int(b) for b in blue])
+    max_green = max([int(g) for g in green])
 
     if max_red <= red_cubes and \
        max_green <= green_cubes and \
